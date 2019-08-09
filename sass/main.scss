@@ -1,17 +1,33 @@
-$m-01:#952e4b;
+$m-01:#00adb5;
 $m-02:#ff5d5d;
 $m-03:#fbe4c9;
-$neu-01: #e9e9e5;
+
+$neu-00: #f0f0f0;
+$neu-01: #e2e2e2;
 $neu-02: #d4d6c8;
 $neu-03: #9a9b94;
 $neu-04: #52524e;
 $neu-05: #434343;
 
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap');
+
+$font-01: 'Rubik',
+sans-serif;
+;
 
 
 body {
 
     margin: 0;
+    font-family: $font-01;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $m-01;
 }
 
 .buttons {
@@ -58,18 +74,21 @@ body {
         width: 100%;
 
         span {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             display: flex;
             flex-wrap: wrap;
             border-radius: 100%;
             margin: 10px;
             transition: all 0.4s ease;
+            border: 6px solid $neu-00;
+            box-shadow: 0px 0px 15px -2px $neu-03;
+
 
 
             &.white {
                 background-color: white;
-                box-shadow: inset 0px 0px 0px 1px $neu-02;
+                //border: 1px solid black;
             }
 
             &.black {
@@ -77,22 +96,44 @@ body {
             }
 
             &.clicked {
+                border: 6px solid $m-01;
 
-                box-shadow: inset 0px 0px 0px 3px $m-02;
+                //box-shadow: inset 0px 0px 0px 3px $m-02;
             }
 
             &:hover {
-                box-shadow: inset 0px 0px 0px 3px $m-02;
+                width: 42px;
+                height: 42px;
+                border: 0px solid $neu-00;
+                box-shadow: 0px 0px 5px 0px $neu-02;
             }
 
         }
+    }
+
+    .copyUrl {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+.copied {
+    border: 1px solid red;
+    position: absolute;
+    opacity: 0;
+
+    &.pop {
+        opacity: 1;
     }
 }
 
 .icons {
     //background-color: black;
-    height: calc(100vh - 160px);
+    //height: calc(100% - 160px);
+
     margin: 0 auto;
+    padding: 60px 0;
     display: grid;
     grid-template-columns: repeat(8, 10%);
     grid-auto-rows: max-content;
@@ -107,7 +148,6 @@ body {
 
 
     i {
-
         width: 0px;
         height: 0px;
         display: flex;
@@ -116,6 +156,7 @@ body {
         border-radius: 4px;
         margin: 0 auto;
         transition: all 0.6s 0.2s ease;
+
 
         img {
             width: 0px;
@@ -164,10 +205,13 @@ body {
             transition: all 0.4s ease;
 
 
+
             img {
                 width: 52px;
                 height: 52px;
             }
+
+            &:hover {}
         }
 
 
