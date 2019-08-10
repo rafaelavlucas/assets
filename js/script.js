@@ -63,6 +63,6 @@ window.onload = function (e) {
 
         setTimeout(function () {
             copied.classList.remove('pop');
-        }, 1000);
+        }, 1500);
     }
 }

@@ -17,7 +17,6 @@ sans-serif;
 
 
 body {
-
     margin: 0;
     font-family: $font-01;
 }
@@ -50,7 +49,6 @@ h2 {
     }
 }
 
-
 .choose-color {
     display: flex;
     justify-content: center;
@@ -73,42 +71,55 @@ h2 {
         height: 50px;
         width: 100%;
 
-        span {
-            width: 20px;
-            height: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            border-radius: 100%;
-            margin: 10px;
-            transition: all 0.4s ease;
-            border: 4px solid $neu-00;
-            box-shadow: 0px 0px 10px -2px $neu-03;
-            cursor: pointer;
+        .btn {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border: 0;
+            //background-color: red;
 
+            span {
+                width: 20px;
+                height: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                border-radius: 100%;
+                margin: 10px;
+                transition: all 0.4s ease;
+                border: 4px solid $neu-00;
+                box-shadow: 0px 0px 10px -2px $neu-03;
+                cursor: pointer;
+                position: absolute;
 
+            }
 
             &.white {
-                background-color: white;
-                //border: 1px solid black;
+
+                span {
+                    background-color: white;
+                }
             }
 
             &.black {
-                background-color: black;
+                span {
+                    background-color: black;
+                }
             }
 
             &.clicked {
-                border: 4px solid $m-01;
-
-                //box-shadow: inset 0px 0px 0px 3px $m-02;
+                span {
+                    border: 4px solid $m-01;
+                }
             }
 
             &:hover {
-                width: 30px;
-                height: 30px;
-                border: 0px solid $neu-00;
-                box-shadow: 0px 0px 5px 0px $neu-02;
+                span {
+                    width: 30px;
+                    height: 30px;
+                    border: 0px solid $neu-00;
+                    box-shadow: 0px 0px 5px 0px $neu-02;
+                }
             }
-
         }
     }
 
@@ -117,26 +128,51 @@ h2 {
         position: absolute;
         z-index: -1;
     }
-}
 
-.copied {
-    border: 1px solid red;
-    top: 30px;
-    right: 30px;
-    opacity: 0;
-    margin: 0;
-    position: fixed;
-    z-index: 2;
+    .copied {
+        top: 30px;
+        right: 30px;
+        opacity: 0;
+        margin: 0;
+        position: fixed;
+        z-index: 2;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: $m-01;
+        color: white;
 
-    &.pop {
-        opacity: 1;
+        &.pop {
+            opacity: 1;
+            animation: pop 1.5s ease forwards;
+
+            @keyframes pop {
+                0% {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: translateY(-10px);
+                }
+
+                70% {
+                    opacity: 1;
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+            }
+        }
     }
 }
 
-.icons {
-    //background-color: black;
-    //height: calc(100% - 160px);
 
+
+.icons {
     margin: 0 auto;
     top: 80px;
     padding: 60px 0;
@@ -146,11 +182,11 @@ h2 {
     grid-row-gap: 20px;
     justify-content: center;
     align-content: center;
-    transition: all 2s 0.6s ease;
+    //transition: all 2s 0.6s ease;
     width: 100%;
-    transform: translateY(-300%);
     position: absolute;
     z-index: -1;
+    display: none;
 
 
     i {
@@ -174,6 +210,7 @@ h2 {
 
     &.white {
         background-color: $neu-04;
+
 
         i {
             border: 1px solid $neu-05;
@@ -201,7 +238,7 @@ h2 {
     }
 
     &.active {
-        transform: translateY(0%);
+        display: grid;
 
         i {
             width: 52px;
