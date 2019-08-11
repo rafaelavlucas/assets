@@ -27,8 +27,6 @@ window.onload = function (e) {
 
         currentColor.classList.add("clicked");
 
-        console.log(icons)
-
     }
 
     // Populate icon image
@@ -43,10 +41,14 @@ window.onload = function (e) {
         }
     }
 
+    // Run functions for each color
     addIcons("white", iconTotal)
     addIcons("black", iconTotal)
     addIcons("gray1", iconTotal)
     addIcons("gray2", iconTotal)
+
+
+    // Select and copy source
 
     var icon = document.querySelectorAll('i img'),
         copied = document.querySelector('.copied');
@@ -54,6 +56,7 @@ window.onload = function (e) {
     icon.forEach(function (element) {
         element.addEventListener('click', selectSrc);
     });
+
 
     function selectSrc(event) {
         var imgSrc = event.currentTarget.src;
