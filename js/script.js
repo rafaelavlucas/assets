@@ -45,6 +45,8 @@ window.onload = function (e) {
 
     addIcons("white", iconTotal)
     addIcons("black", iconTotal)
+    addIcons("gray1", iconTotal)
+    addIcons("gray2", iconTotal)
 
     var icon = document.querySelectorAll('i img'),
         copied = document.querySelector('.copied');

@@ -12,24 +12,28 @@
 
 <body>
 
-    <div class="choose-color">
-        <div class="colors">
-            <div class="btn color black clicked" data-color="black"><span></span></div>
-            <div class="btn color white" data-color="white"><span></span></div>
+    <div class="container content-icons">
+        <div class="choose-color">
+            <a href="index.html"> <img src="/icons/gray1/icon-5.svg" alt=""></a>
+            <div class="colors">
+                <div class="btn color black clicked" data-color="black"><span></span></div>
+                <div class="btn color gray1" data-color="gray1"><span></span></div>
+                <div class="btn color gray2" data-color="gray2"><span></span></div>
+                <div class="btn color white" data-color="white"><span></span></div>
+
+            </div>
+            <input type="text" class="copyUrl">
+
+            <p class="copied">Copied to clipboard</p>
+
         </div>
-        <input type="text" class="copyUrl">
 
-        <p class="copied">Copied to clipboard</p>
+        <div class="icons dark active" id="black"></div>
+        <div class="icons dark" id="gray1"></div>
+        <div class="icons dark" id="gray2"></div>
+        <div class="icons light" id="white"></div>
 
     </div>
-
-
-    <div class="icons white" id="white">
-    </div>
-
-    <div class="icons black active" id="black">
-    </div>
-
 </body>
 
 </html>
