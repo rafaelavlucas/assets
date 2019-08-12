@@ -10,7 +10,7 @@ window.onload = function (e) {
         var image = document.getElementById("images");
         for (let i = 1; i <= imgNumber; i++) {
 
-            var template = `<img src="images/img-${i}.jpeg">`;
+            var template = `<div class="image"><img src="images/img-${i}.jpeg"></div>`;
             image.insertAdjacentHTML('beforeend', template);
         }
     }
@@ -39,6 +39,6 @@ window.onload = function (e) {
 
         setTimeout(function () {
             copied.classList.remove('pop');
-        }, 1500);
+        }, 1200);
     }
 }
