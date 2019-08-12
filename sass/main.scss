@@ -4,6 +4,7 @@ $m-03:#fbe4c9;
 $m-04: #3d3c4c;
 $m-05: #605dd0;
 $m-06: #dcddea;
+$m-07: #37b1d6;
 
 $neu-00: #f0f0f0;
 $neu-01: #e2e2e2;
@@ -40,7 +41,7 @@ h2 {
 
     a {
         margin: 10px;
-        background-color: $m-04;
+        background: linear-gradient(90deg, $m-05, $m-07);
         border: 0;
         color: white;
         height: 40px;
@@ -93,11 +94,12 @@ h2 {
     &:before {
         content: '';
         position: absolute;
-        //width: 100%;
+        width: 100%;
         height: 100vh;
         top: 0;
-        background-color: $m-05;
-        //animation: loading 1.5s 1s ease forwards;
+        background: linear-gradient(90deg, $m-05, $m-07);
+        animation: loading 1.5s 1s ease forwards;
+        z-index: 2;
 
         @keyframes loading {
             0% {
@@ -118,171 +120,181 @@ h2 {
 }
 
 
-.copyUrl {
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
-}
 
-.copied {
-    top: 30px;
-    right: 30px;
-    opacity: 0;
-    margin: 0;
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $m-06;
+    height: 80px;
+    z-index: 2;
     position: fixed;
-    z-index: 3;
-    padding: 10px 20px;
-    border-radius: 50px;
-    background-color: $m-05;
-    color: white;
+    width: 100%;
+    padding: 0 30px;
 
-    &.pop {
-        opacity: 1;
-        animation: pop 1s ease forwards;
-
-        @keyframes pop {
-            0% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            50% {
-                opacity: 1;
-                transform: translateY(-10px);
-            }
-
-            70% {
-                opacity: 1;
-                transform: translateY(-10px);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-        }
+    p {
+        color: $m-01;
     }
-}
 
 
-
-
-.content-icons {
-
-    .choose-color {
+    .colors {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $m-06;
-        height: 80px;
-        z-index: 2;
-        position: fixed;
+        height: 50px;
         width: 100%;
-        padding: 0 30px;
-
-        p {
-            color: $m-01;
-        }
-
-        a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            img {
-                width: 30px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                opacity: 0.5;
-
-                &:hover {
-                    transform: translateX(-5px);
-                    opacity: 1;
-
-                }
-            }
-        }
 
 
-        .colors {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .btn {
+            position: relative;
+            width: 50px;
             height: 50px;
-            width: 100%;
+            border: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //background-color: red;
 
-            .btn {
-                position: relative;
-                width: 50px;
-                height: 50px;
-                border: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                //background-color: red;
+            span {
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                transition: all 0.3s ease;
+                border: 4px solid transparent;
+                box-shadow: 0px 0px 10px -2px $neu-03;
+                cursor: pointer;
+                position: absolute;
+
+            }
+
+            &.white {
 
                 span {
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 100%;
-                    transition: all 0.3s ease;
-                    border: 4px solid transparent;
-                    box-shadow: 0px 0px 10px -2px $neu-03;
-                    cursor: pointer;
-                    position: absolute;
-
+                    background-color: white;
                 }
+            }
 
-                &.white {
-
-                    span {
-                        background-color: white;
-                    }
+            &.black {
+                span {
+                    background-color: black;
                 }
+            }
 
-                &.black {
-                    span {
-                        background-color: black;
-                    }
+            &.gray1 {
+                span {
+                    background-color: $neu-05;
                 }
+            }
 
-                &.gray1 {
-                    span {
-                        background-color: $neu-05;
-                    }
+            &.gray2 {
+                span {
+                    background-color: $neu-03;
                 }
+            }
 
-                &.gray2 {
-                    span {
-                        background-color: $neu-03;
-                    }
+            &.clicked {
+                span {
+                    border: 4px solid $m-05;
+                }
+            }
+
+            &:hover {
+                span {
+                    width: 25px;
+                    height: 25px;
                 }
 
                 &.clicked {
                     span {
                         border: 4px solid $m-05;
-                    }
-                }
-
-                &:hover {
-                    span {
-                        width: 25px;
-                        height: 25px;
-                    }
-
-                    &.clicked {
-                        span {
-                            border: 4px solid $m-05;
-                            width: 20px;
-                            height: 20px;
+                        width: 20px;
+                        height: 20px;
 
 
-                        }
                     }
                 }
             }
         }
     }
+
+    .back {
+        left: 30px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        background: linear-gradient(90deg, $m-05, $m-07);
+        border-radius: 100%;
+
+        span {
+            width: 20px;
+            height: 20px;
+            background-image: url(/icons/white/icon-5.svg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            span {
+                transform: translateX(-3px);
+            }
+        }
+    }
+
+    .copyUrl {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .copied {
+        top: 30px;
+        right: 30px;
+        opacity: 0;
+        margin: 0;
+        position: fixed;
+        z-index: 3;
+        padding: 10px 20px;
+        border-radius: 50px;
+        //background-color: $m-05;
+        background: linear-gradient(90deg, $m-05, $m-07);
+        color: white;
+
+        &.pop {
+            opacity: 1;
+            animation: pop 1s ease forwards;
+
+            @keyframes pop {
+                0% {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: translateY(-10px);
+                }
+
+                70% {
+                    opacity: 1;
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+            }
+        }
+    }
+}
+
+
+
+.content-icons {
 
     .icons {
         margin: 0 auto;
@@ -315,6 +327,10 @@ h2 {
                 width: 0px;
                 height: 0px;
                 transition: all 0.4s ease;
+            }
+
+            &.icon-active {
+                box-shadow: 0px 0px 0px 4px $m-05;
             }
         }
 
@@ -381,38 +397,30 @@ h2 {
         z-index: -1;
 
         .image {
+            top: 80px;
             width: auto;
             height: 140px;
             overflow: hidden;
             margin: 10px;
-            transition: all 0.4s 0.1s ease;
+            transition: all 0.4s ease;
             position: relative;
             cursor: pointer;
+            border-radius: 2px;
+
 
             img {
                 //height: auto;
                 height: 140px;
                 transition: all 0.4s ease;
-
-
-
-
             }
 
-            &:before {
-                content: '';
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                background-color: $neu-05;
-                opacity: 0;
-                transition: all 0.4s ease;
-                z-index: 1;
+            &.img-active {
+                box-shadow: 0px 0px 0px 5px $m-05;
+
             }
 
             &:hover {
-                box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
-
+                //box-shadow: 0px 0px 0px 5px $m-05;
 
                 img {
                     margin: 0;
@@ -420,9 +428,7 @@ h2 {
                     transform: scale(1.3);
                 }
 
-                &:before {
-                    opacity: 0.2;
-                }
+
             }
 
         }

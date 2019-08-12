@@ -26,7 +26,8 @@ h2 {
 
 .buttons a {
   margin: 10px;
-  background-color: #3d3c4c;
+  background: -webkit-gradient(linear, left top, right top, from(#605dd0), to(#37b1d6));
+  background: linear-gradient(90deg, #605dd0, #37b1d6);
   border: 0;
   color: white;
   height: 40px;
@@ -76,9 +77,14 @@ h2 {
 .container:before {
   content: '';
   position: absolute;
+  width: 100%;
   height: 100vh;
   top: 0;
-  background-color: #605dd0;
+  background: -webkit-gradient(linear, left top, right top, from(#605dd0), to(#37b1d6));
+  background: linear-gradient(90deg, #605dd0, #37b1d6);
+  -webkit-animation: loading 1.5s 1s ease forwards;
+          animation: loading 1.5s 1s ease forwards;
+  z-index: 2;
 }
 
 @-webkit-keyframes loading {
@@ -107,13 +113,142 @@ h2 {
   }
 }
 
-.copyUrl {
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #dcddea;
+  height: 80px;
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.controls p {
+  color: #00adb5;
+}
+
+.controls .colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+.controls .colors .btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls .colors .btn span {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 4px solid transparent;
+  -webkit-box-shadow: 0px 0px 10px -2px #9a9b94;
+          box-shadow: 0px 0px 10px -2px #9a9b94;
+  cursor: pointer;
+  position: absolute;
+}
+
+.controls .colors .btn.white span {
+  background-color: white;
+}
+
+.controls .colors .btn.black span {
+  background-color: black;
+}
+
+.controls .colors .btn.gray1 span {
+  background-color: #434343;
+}
+
+.controls .colors .btn.gray2 span {
+  background-color: #9a9b94;
+}
+
+.controls .colors .btn.clicked span {
+  border: 4px solid #605dd0;
+}
+
+.controls .colors .btn:hover span {
+  width: 25px;
+  height: 25px;
+}
+
+.controls .colors .btn:hover.clicked span {
+  border: 4px solid #605dd0;
+  width: 20px;
+  height: 20px;
+}
+
+.controls .back {
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(#605dd0), to(#37b1d6));
+  background: linear-gradient(90deg, #605dd0, #37b1d6);
+  border-radius: 100%;
+}
+
+.controls .back span {
+  width: 20px;
+  height: 20px;
+  background-image: url(/icons/white/icon-5.svg);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.controls .back:hover span {
+  -webkit-transform: translateX(-3px);
+          transform: translateX(-3px);
+}
+
+.controls .copyUrl {
   opacity: 0;
   position: absolute;
   z-index: -1;
 }
 
-.copied {
+.controls .copied {
   top: 30px;
   right: 30px;
   opacity: 0;
@@ -122,11 +257,12 @@ h2 {
   z-index: 3;
   padding: 10px 20px;
   border-radius: 50px;
-  background-color: #605dd0;
+  background: -webkit-gradient(linear, left top, right top, from(#605dd0), to(#37b1d6));
+  background: linear-gradient(90deg, #605dd0, #37b1d6);
   color: white;
 }
 
-.copied.pop {
+.controls .copied.pop {
   opacity: 1;
   -webkit-animation: pop 1s ease forwards;
           animation: pop 1s ease forwards;
@@ -178,128 +314,6 @@ h2 {
   }
 }
 
-.content-icons .choose-color {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #dcddea;
-  height: 80px;
-  z-index: 2;
-  position: fixed;
-  width: 100%;
-  padding: 0 30px;
-}
-
-.content-icons .choose-color p {
-  color: #00adb5;
-}
-
-.content-icons .choose-color a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.content-icons .choose-color a img {
-  width: 30px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  opacity: 0.5;
-}
-
-.content-icons .choose-color a img:hover {
-  -webkit-transform: translateX(-5px);
-          transform: translateX(-5px);
-  opacity: 1;
-}
-
-.content-icons .choose-color .colors {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 50px;
-  width: 100%;
-}
-
-.content-icons .choose-color .colors .btn {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  border: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.content-icons .choose-color .colors .btn span {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  border: 4px solid transparent;
-  -webkit-box-shadow: 0px 0px 10px -2px #9a9b94;
-          box-shadow: 0px 0px 10px -2px #9a9b94;
-  cursor: pointer;
-  position: absolute;
-}
-
-.content-icons .choose-color .colors .btn.white span {
-  background-color: white;
-}
-
-.content-icons .choose-color .colors .btn.black span {
-  background-color: black;
-}
-
-.content-icons .choose-color .colors .btn.gray1 span {
-  background-color: #434343;
-}
-
-.content-icons .choose-color .colors .btn.gray2 span {
-  background-color: #9a9b94;
-}
-
-.content-icons .choose-color .colors .btn.clicked span {
-  border: 4px solid #605dd0;
-}
-
-.content-icons .choose-color .colors .btn:hover span {
-  width: 25px;
-  height: 25px;
-}
-
-.content-icons .choose-color .colors .btn:hover.clicked span {
-  border: 4px solid #605dd0;
-  width: 20px;
-  height: 20px;
-}
-
 .content-icons .icons {
   margin: 0 auto;
   top: 80px;
@@ -346,6 +360,11 @@ h2 {
   height: 0px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+}
+
+.content-icons .icons i.icon-active {
+  -webkit-box-shadow: 0px 0px 0px 4px #605dd0;
+          box-shadow: 0px 0px 0px 4px #605dd0;
 }
 
 .content-icons .icons.light {
@@ -409,14 +428,16 @@ h2 {
 }
 
 .content-images .images .image {
+  top: 80px;
   width: auto;
   height: 140px;
   overflow: hidden;
   margin: 10px;
-  -webkit-transition: all 0.4s 0.1s ease;
-  transition: all 0.4s 0.1s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   position: relative;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .content-images .images .image img {
@@ -425,21 +446,9 @@ h2 {
   transition: all 0.4s ease;
 }
 
-.content-images .images .image:before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: #434343;
-  opacity: 0;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  z-index: 1;
-}
-
-.content-images .images .image:hover {
-  -webkit-box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
+.content-images .images .image.img-active {
+  -webkit-box-shadow: 0px 0px 0px 5px #605dd0;
+          box-shadow: 0px 0px 0px 5px #605dd0;
 }
 
 .content-images .images .image:hover img {
@@ -447,9 +456,5 @@ h2 {
   width: auto;
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
-}
-
-.content-images .images .image:hover:before {
-  opacity: 0.2;
 }
 /*# sourceMappingURL=main.css.map */

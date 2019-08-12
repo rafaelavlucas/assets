@@ -60,14 +60,20 @@ window.onload = function (e) {
 
     function selectSrc(event) {
         var imgSrc = event.currentTarget.src;
+        var target = event.currentTarget.parentElement;
         input.value = imgSrc;
         input.select();
         document.execCommand('copy');
 
         copied.classList.add('pop');
+        target.classList.add('icon-active');
 
         setTimeout(function () {
             copied.classList.remove('pop');
         }, 1200);
+
+        setTimeout(function () {
+            target.classList.remove('icon-active');
+        }, 1000);
     }
 }
