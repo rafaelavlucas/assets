@@ -4,25 +4,25 @@ window.onload = function (e) {
 
     // Populate icon image
 
-    var imgTotal = 243;
+    var imgTotal = 14;
 
     function addImages(imgNumber) {
-        var image = document.getElementById(images);
+        var image = document.getElementById("images");
         for (let i = 1; i <= imgNumber; i++) {
 
-            var template = `img src="images/img-${i}.jpg">`;
+            var template = `<img src="images/img-${i}.jpeg">`;
             image.insertAdjacentHTML('beforeend', template);
         }
     }
 
-    // Run functions for each color
     addImages(imgTotal)
 
 
     // Select and copy source
 
     var img = document.querySelectorAll('img'),
-        copied = document.querySelector('.copied');
+        copied = document.querySelector('.copied'),
+        input = document.querySelector('.copyUrl');
 
     img.forEach(function (element) {
         element.addEventListener('click', selectSrc);
