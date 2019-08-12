@@ -372,43 +372,61 @@ h2 {
         margin: 0 auto;
         top: 80px;
         padding: 60px 0;
-        display: grid;
-        grid-template-columns: repeat(5, 220px);
-        grid-auto-rows: max-content;
-        grid-row-gap: 20px;
-        grid-column-gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-content: center;
-        width: 100%;
-        position: absolute;
-        display: grid;
+        max-width: 1440px;
+        margin: 0 auto;
         z-index: -1;
 
         .image {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            //border: 1px solid $neu-01;
+            width: auto;
             height: 140px;
+            overflow: hidden;
+            margin: 10px;
+            transition: all 0.4s 0.1s ease;
             position: relative;
+            cursor: pointer;
 
             img {
-                height: 80%;
-                width: auto;
-                transition: height 0.4s ease, box-shadow 0.4s 0.1s ease;
-                cursor: pointer;
+                //height: auto;
+                height: 140px;
+                transition: all 0.4s ease;
+
+
+
+
+            }
+
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
+                background-color: $neu-05;
+                opacity: 0;
+                transition: all 0.4s ease;
+                z-index: 1;
             }
 
             &:hover {
+                box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
+
+
                 img {
-                    height: 100%;
-                    box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
+                    margin: 0;
+                    width: auto;
+                    transform: scale(1.3);
+                }
+
+                &:before {
+                    opacity: 0.2;
                 }
             }
+
         }
+
 
     }
 }
