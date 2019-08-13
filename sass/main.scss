@@ -10,7 +10,7 @@ $neu-00: #f0f0f0;
 $neu-01: #e2e2e2;
 $neu-02: #d4d6c8;
 $neu-03: #9a9b94;
-$neu-04: #52524e;
+$neu-04: #666;
 $neu-05: #434343;
 
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap');
@@ -98,7 +98,7 @@ h2 {
         height: 100vh;
         top: 0;
         background: linear-gradient(90deg, $m-05, $m-07);
-        animation: loading 1.5s 1s ease forwards;
+        animation: loading 2.5s 1s ease forwards;
         z-index: 2;
 
         @keyframes loading {
@@ -183,7 +183,7 @@ h2 {
 
             &.gray1 {
                 span {
-                    background-color: $neu-05;
+                    background-color: $neu-04;
                 }
             }
 
@@ -232,7 +232,7 @@ h2 {
         span {
             width: 20px;
             height: 20px;
-            background-image: url(../icons/white/icon-5.svg);
+            background-image: url(/icons/white/icon-5.svg);
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -386,8 +386,8 @@ h2 {
 .content-images {
     .images {
         margin: 0 auto;
-        top: 80px;
-        padding: 60px 0;
+
+        padding: 120px 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -397,7 +397,6 @@ h2 {
         z-index: -1;
 
         .image {
-            top: 80px;
             width: auto;
             height: 140px;
             overflow: hidden;
