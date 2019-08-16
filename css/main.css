@@ -82,8 +82,8 @@ h2 {
   top: 0;
   background: -webkit-gradient(linear, left top, right top, from(#605dd0), to(#37b1d6));
   background: linear-gradient(90deg, #605dd0, #37b1d6);
-  -webkit-animation: loading 2.5s 1s ease forwards;
-          animation: loading 2.5s 1s ease forwards;
+  -webkit-animation: loading 1.5s 1s ease forwards;
+          animation: loading 1.5s 1s ease forwards;
   z-index: 2;
 }
 
@@ -187,7 +187,7 @@ h2 {
 }
 
 .controls .colors .btn.gray1 span {
-  background-color: #666;
+  background-color: #434343;
 }
 
 .controls .colors .btn.gray2 span {
@@ -231,7 +231,7 @@ h2 {
 .controls .back span {
   width: 20px;
   height: 20px;
-  background-image: url(/icons/white/icon-5.svg);
+  background-image: url("../icons/white/icon-5.svg");
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -368,7 +368,7 @@ h2 {
 }
 
 .content-icons .icons.light {
-  background-color: #666;
+  background-color: #52524e;
 }
 
 .content-icons .icons.light i {
@@ -410,7 +410,8 @@ h2 {
 
 .content-images .images {
   margin: 0 auto;
-  padding: 120px 0;
+  top: 80px;
+  padding: 60px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -427,6 +428,7 @@ h2 {
 }
 
 .content-images .images .image {
+  top: 80px;
   width: auto;
   height: 140px;
   overflow: hidden;
